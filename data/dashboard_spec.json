@@ -1,0 +1,247 @@
+{
+ "title": "AI Chest X-Ray Triage Tool: Clinical Governance Review",
+ "subtitle": "8,000 synthetic cases, disease prevalence about 8.7%, decision threshold 0.5. Minimum acceptable sensitivity per subgroup: 85%.",
+ "kpis": [
+  {
+   "label": "Overall sensitivity",
+   "value": "73.5%",
+   "status": "bad",
+   "note": "below the 85% minimum even before subgroups"
+  },
+  {
+   "label": "Worst subgroup sensitivity",
+   "value": "48.3%",
+   "status": "bad",
+   "note": "age_band: 80 plus"
+  },
+  {
+   "label": "Positive predictive value",
+   "value": "38.3%",
+   "status": "warn",
+   "note": "most alerts are false at this prevalence"
+  },
+  {
+   "label": "Missed cases",
+   "value": 184,
+   "status": "bad",
+   "note": "of 696 true cases"
+  }
+ ],
+ "verdict": {
+  "status": "warn",
+  "label": "Recommendation: do not approve for triage. Limited pilot only.",
+  "text": "Sensitivity collapses on the old scanner (56.6%), in patients 80 plus (48.3%) and at the rural clinic (65.7%). Risk scores are also overconfident: a 40 to 60% score corresponds to 12% real disease. Allow a second-reader pilot at the validated site only, never as a rule-out tool."
+ },
+ "charts": [
+  {
+   "title": "Sensitivity by subgroup (%)",
+   "unit": "%",
+   "max": 100,
+   "threshold": {
+    "value": 85,
+    "label": "85% minimum"
+   },
+   "items": [
+    {
+     "label": "Female",
+     "value": 70.9,
+     "status": "bad"
+    },
+    {
+     "label": "Male",
+     "value": 76.0,
+     "status": "warn"
+    },
+    {
+     "label": "18-44",
+     "value": 84.9,
+     "status": "warn"
+    },
+    {
+     "label": "45-64",
+     "value": 75.4,
+     "status": "warn"
+    },
+    {
+     "label": "65-79",
+     "value": 76.8,
+     "status": "warn"
+    },
+    {
+     "label": "80 plus",
+     "value": 48.3,
+     "status": "bad"
+    },
+    {
+     "label": "Hospital A (new scanner)",
+     "value": 87.0,
+     "status": "good"
+    },
+    {
+     "label": "Hospital B (old scanner)",
+     "value": 56.6,
+     "status": "bad"
+    },
+    {
+     "label": "Rural clinic",
+     "value": 65.7,
+     "status": "bad"
+    }
+   ]
+  },
+  {
+   "title": "Calibration: predicted vs observed disease rate (%)",
+   "unit": "%",
+   "max": 100,
+   "items": [
+    {
+     "label": "Risk 0.0-0.2 predicted",
+     "value": 11.8,
+     "status": "info"
+    },
+    {
+     "label": "Risk 0.0-0.2 observed",
+     "value": 0.7,
+     "status": "warn"
+    },
+    {
+     "label": "Risk 0.2-0.4 predicted",
+     "value": 28.9,
+     "status": "info"
+    },
+    {
+     "label": "Risk 0.2-0.4 observed",
+     "value": 3.2,
+     "status": "warn"
+    },
+    {
+     "label": "Risk 0.4-0.6 predicted",
+     "value": 48.5,
+     "status": "info"
+    },
+    {
+     "label": "Risk 0.4-0.6 observed",
+     "value": 12.0,
+     "status": "warn"
+    },
+    {
+     "label": "Risk 0.6-0.8 predicted",
+     "value": 68.5,
+     "status": "info"
+    },
+    {
+     "label": "Risk 0.6-0.8 observed",
+     "value": 38.2,
+     "status": "warn"
+    },
+    {
+     "label": "Risk 0.8-1.0 predicted",
+     "value": 87.5,
+     "status": "info"
+    },
+    {
+     "label": "Risk 0.8-1.0 observed",
+     "value": 87.1,
+     "status": "good"
+    }
+   ]
+  }
+ ],
+ "tables": [
+  {
+   "title": "Subgroup performance",
+   "columns": [
+    "Subgroup",
+    "N",
+    "Sensitivity %",
+    "Specificity %",
+    "PPV %",
+    "AUC",
+    "Gate"
+   ],
+   "rows": [
+    [
+     "sex: Female",
+     4027,
+     70.9,
+     89.2,
+     37.2,
+     0.883,
+     "FAIL"
+    ],
+    [
+     "sex: Male",
+     3973,
+     76.0,
+     88.3,
+     39.3,
+     0.91,
+     "WARN"
+    ],
+    [
+     "age_band: 18-44",
+     2440,
+     84.9,
+     89.3,
+     36.6,
+     0.937,
+     "WARN"
+    ],
+    [
+     "age_band: 45-64",
+     2823,
+     75.4,
+     88.1,
+     30.5,
+     0.904,
+     "WARN"
+    ],
+    [
+     "age_band: 65-79",
+     1926,
+     76.8,
+     89.3,
+     49.0,
+     0.927,
+     "WARN"
+    ],
+    [
+     "age_band: 80 plus",
+     811,
+     48.3,
+     88.2,
+     41.0,
+     0.762,
+     "FAIL"
+    ],
+    [
+     "site: Hospital A (new scanner)",
+     4086,
+     87.0,
+     88.4,
+     40.9,
+     0.947,
+     "PASS"
+    ],
+    [
+     "site: Hospital B (old scanner)",
+     2397,
+     56.6,
+     88.7,
+     32.7,
+     0.826,
+     "FAIL"
+    ],
+    [
+     "site: Rural clinic",
+     1517,
+     65.7,
+     89.9,
+     39.1,
+     0.883,
+     "FAIL"
+    ]
+   ]
+  }
+ ]
+}

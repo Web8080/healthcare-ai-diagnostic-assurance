@@ -1,0 +1,126 @@
+{
+ "overall": {
+  "n": 8000,
+  "sens": 73.5,
+  "spec": 88.7,
+  "ppv": 38.3,
+  "auc": 0.897,
+  "missed": 184,
+  "prevalence": 8.7
+ },
+ "subgroups": {
+  "sex: Female": {
+   "n": 4027,
+   "sens": 70.9,
+   "spec": 89.2,
+   "ppv": 37.2,
+   "auc": 0.883,
+   "missed": 97,
+   "prevalence": 8.3
+  },
+  "sex: Male": {
+   "n": 3973,
+   "sens": 76.0,
+   "spec": 88.3,
+   "ppv": 39.3,
+   "auc": 0.91,
+   "missed": 87,
+   "prevalence": 9.1
+  },
+  "age_band: 18-44": {
+   "n": 2440,
+   "sens": 84.9,
+   "spec": 89.3,
+   "ppv": 36.6,
+   "auc": 0.937,
+   "missed": 25,
+   "prevalence": 6.8
+  },
+  "age_band: 45-64": {
+   "n": 2823,
+   "sens": 75.4,
+   "spec": 88.1,
+   "ppv": 30.5,
+   "auc": 0.904,
+   "missed": 45,
+   "prevalence": 6.5
+  },
+  "age_band: 65-79": {
+   "n": 1926,
+   "sens": 76.8,
+   "spec": 89.3,
+   "ppv": 49.0,
+   "auc": 0.927,
+   "missed": 53,
+   "prevalence": 11.8
+  },
+  "age_band: 80 plus": {
+   "n": 811,
+   "sens": 48.3,
+   "spec": 88.2,
+   "ppv": 41.0,
+   "auc": 0.762,
+   "missed": 61,
+   "prevalence": 14.5
+  },
+  "site: Hospital A (new scanner)": {
+   "n": 4086,
+   "sens": 87.0,
+   "spec": 88.4,
+   "ppv": 40.9,
+   "auc": 0.947,
+   "missed": 45,
+   "prevalence": 8.5
+  },
+  "site: Hospital B (old scanner)": {
+   "n": 2397,
+   "sens": 56.6,
+   "spec": 88.7,
+   "ppv": 32.7,
+   "auc": 0.826,
+   "missed": 92,
+   "prevalence": 8.8
+  },
+  "site: Rural clinic": {
+   "n": 1517,
+   "sens": 65.7,
+   "spec": 89.9,
+   "ppv": 39.1,
+   "auc": 0.883,
+   "missed": 47,
+   "prevalence": 9.0
+  }
+ },
+ "calibration": [
+  {
+   "bin": "0.0-0.2",
+   "n": 3050,
+   "predicted": 11.8,
+   "observed": 0.7
+  },
+  {
+   "bin": "0.2-0.4",
+   "n": 2774,
+   "predicted": 28.9,
+   "observed": 3.2
+  },
+  {
+   "bin": "0.4-0.6",
+   "n": 1370,
+   "predicted": 48.5,
+   "observed": 12.0
+  },
+  {
+   "bin": "0.6-0.8",
+   "n": 574,
+   "predicted": 68.5,
+   "observed": 38.2
+  },
+  {
+   "bin": "0.8-1.0",
+   "n": 232,
+   "predicted": 87.5,
+   "observed": 87.1
+  }
+ ]
+}
